@@ -43,5 +43,16 @@
     "nodemon": "^2.0.6",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "./node_modules/.bin/eslint --max-warnings=0",
+      "pretty-quick --staged"
+    ]
   }
 }
